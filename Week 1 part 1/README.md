@@ -7,4 +7,5 @@ Check back each week for updates to both the code and the Data.
 
 
 
-http://scikit-learn.org/stable/_static/ml_map.png
+
+![Alt text](http://scikit-learn.org/stable/_static/ml_map.png "Scikit Learn")
