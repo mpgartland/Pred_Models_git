@@ -1,12 +1,11 @@
+#A continuous Target
 
-```{r set2}
-setwd('~/Documents/Courses/Predictive Models/PM/Week 6/')
+setwd('/Users/mpgartland/Documents/Courses/Predictive Models/Pred_Models_git/Week 5/data')
 ## Step 2: Exploring and preparing the data ----
 # read in data and examine structure
 concrete <- read.csv("concrete.csv")
 str(concrete)
-boxplot(concrete) #see the distibutions of each variable
-````
+
 
 
 #custom normalization function
@@ -37,7 +36,7 @@ concrete_test <- concrete_norm[774:1030, ]
 library(neuralnet)
 
 # simple ANN with only a two hidden neurons
-concrete_model_2 <- neuralnet(formula = strength ~ cement + slag +
+concrete_model_1 <- neuralnet(formula = strength ~ cement + slag +
                               ash + water + superplastic + 
                               coarseagg + fineagg + age,
                             data = concrete_train, hidden = 2, algorithm = "rprop+", learningrate=NULL)
@@ -47,21 +46,21 @@ concrete_model_2 <- neuralnet(formula = strength ~ cement + slag +
 
 # visualize the network topology
 #note one node in the hidden layer
-plot(concrete_model_2)
+plot(concrete_model_1)
 
 #table of nuerons and weights
-concrete_model_2$result.matrix 
+concrete_model_1$result.matrix 
 
 ## Step 4: Evaluating model performance ----
 # obtain model results
-model_results_2 <- compute(concrete_model_2, concrete_test[1:8]) #You are running the training set through the ANN model
+model_results_1 <- compute(concrete_model_1, concrete_test[1:8]) #You are running the training set through the ANN model
 # obtain predicted strength values
-predicted_strength_2 <- model_results_2$net.result #The prediction of each observation
+predicted_strength_1 <- model_results_1$net.result #The prediction of each observation
 # examine the correlation between predicted and actual values
-cor(predicted_strength_2, concrete_test$strength)
+cor(predicted_strength_1, concrete_test$strength)
 
 #RMSE
-sqrt(mean((concrete_test$strength-predicted_strength_2)^2))
+sqrt(mean((concrete_test$strength-predicted_strength_1)^2))
 
 ## Step 5: Improving model performance ----
 # a more complex neural network topology with 5 hidden neurons

@@ -1,4 +1,4 @@
-setwd('/Users/mylesgartland/Documents/Courses/Predictive Models/Week 5')
+setwd('//Users/mpgartland/Documents/Courses/Predictive Models/Pred_Models_git/Week 5/data')
 library("neuralnet")
 # you can also see the packages nnet and RSNNS
 
