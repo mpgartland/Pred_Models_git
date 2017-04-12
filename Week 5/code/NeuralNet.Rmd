@@ -1,0 +1,82 @@
+---
+title: "Neural Net R Notebook"
+output:
+  html_notebook: default
+  html_document: default
+---
+```{r}
+setwd('//Users/mpgartland/Documents/Courses/Predictive Models/Pred_Models_git/Week 5/data')
+library("neuralnet")
+dataset <- read.csv("creditset.csv")
+```
+
+
+```{r}
+head(dataset)
+```
+
+```{r}
+## extract a set to train the NN @ 65%
+trainset <- dataset[1:1300, ]
+
+## select the test set
+testset <- dataset[1301:2000, ]
+
+#NN nodel with one hiddeD layer and 4 nodes, resilient backprop
+creditnet <- neuralnet(default10yr ~ LTI +age, trainset, hidden = 4, lifesign = "minimal", 
+                       linear.output = FALSE, threshold = 0.1,algorithm = "rprop+")
+
+
+
+#print(creditnet)
+
+```
+
+```{r}
+plot(creditnet, rep = "best")
+```
+
+```{r}
+#weight from models
+creditnet$weights
+
+creditnet$result.matrix
+
+#results (notice in probabilities)
+creditnet$net.result
+```
+
+```{r}
+## test the resulting output
+temp_test <- subset(testset, select = c("LTI", "age"))
+
+#compute the test results through the ANN model 
+creditnet.results <- compute(creditnet, temp_test)
+
+#Make a table to predictions and actuals
+results <- data.frame(actual = testset$default10yr, 
+                      prediction = creditnet.results$net.result)
+
+print(results)
+
+```
+
+```{r}
+#Round predictions to make easier to read
+results$prediction <- round(results$prediction)
+
+#See partial results
+results[100:115, ]
+
+#See all results
+print(results)
+
+print(creditnet.results)
+```
+
+```{r}
+#USing Gmodels to create a confusion matrix
+library(gmodels)
+CrossTable(results$actual, results$prediction)
+```
+
