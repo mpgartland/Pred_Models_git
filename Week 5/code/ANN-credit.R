@@ -84,7 +84,7 @@ creditnet1 <- neuralnet(default10yr ~ LTI +age, trainset, hidden=c(2,4), lifesig
 
 print(creditnet1)
 
-plot(creditnet1)
+plot(creditnet1, rep = "best")
 
 ###Try happends are you add/less more hidden node, more variables, and changes in arguments
 
