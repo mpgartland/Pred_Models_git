@@ -1,30 +1,18 @@
-## R code 8.1
-num_weeks <- 1e5
-positions <- rep(0,num_weeks)
-current <- 10
-for ( i in 1:num_weeks ) {
-  # record current position
-  positions[i] <- current
-  
-  # flip coin to generate proposal
-  proposal <- current + sample( c(-1,1) , size=1 )
-  # now make sure he loops around the archipelago
-  if ( proposal < 1 ) proposal <- 10
-  if ( proposal > 10 ) proposal <- 1
-  
-  # move?
-  prob_move <- proposal/current
-  current <- ifelse( runif(1) < prob_move , proposal , current )
-}
 
 ## R code 8.2
 library(rethinking)
+#rstan_options(auto_write = TRUE)
+#options(mc.cores = parallel::detectCores())
+
+#Set Data to me mapped
 data(rugged)
 d <- rugged
 d$log_gdp <- log(d$rgdppc_2000)
 dd <- d[ complete.cases(d$rgdppc_2000) , ]
 
 ## R code 8.3
+#Create a function for the PD from this data set given
+#the below regression 
 m8.1 <- map(
   alist(
     log_gdp ~ dnorm( mu , sigma ) ,
@@ -36,13 +24,19 @@ m8.1 <- map(
     sigma ~ dunif(0,10)
   ) ,
   data=dd )
+
+#Review Model
 precis(m8.1)
 
 ## R code 8.4
+#Simplify the data set
 dd.trim <- dd[ , c("log_gdp","rugged","cont_africa") ]
 str(dd.trim)
 
 ## R code 8.5
+#Remap (to STAN) the regression function 
+#sigma to a uniform prior
+#using a Hamiltonian MCMC to sample from the PD
 m8.1stan <- map2stan(
   alist(
     log_gdp ~ dnorm( mu , sigma ) ,
@@ -53,21 +47,33 @@ m8.1stan <- map2stan(
     bAR ~ dnorm(0,10),
     sigma ~ dcauchy(0,2)
   ) ,
-  data=dd.trim )
+  data=dd.trim,iter=2000,warmup = 1000 )
+
+#View MCMC model via STAN
+
+print(m8.1stan)
 
 ## R code 8.6
+#Updated Regression output
 precis(m8.1stan)
 
 ## R code 8.7
+#Using 4 Chains
 m8.1stan_4chains <- map2stan( m8.1stan , chains=4 , cores=4 )
 precis(m8.1stan_4chains)
 
 ## R code 8.8
+#extact sampled values
 post <- extract.samples( m8.1stan )
 str(post)
 
+
 ## R code 8.9
 pairs(post)
+
+#PD of each parameter
+dens(post$a)
+dens(post$bR)
 
 ## R code 8.10
 pairs(m8.1stan)
@@ -79,6 +85,13 @@ show(m8.1stan)
 plot(m8.1stan)
 
 
+
+
+
+
+
+#########################
+#Additional code)
 #########################
 ## R code 8.13
 y <- c(-1,1)
