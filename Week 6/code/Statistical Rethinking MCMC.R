@@ -1,8 +1,8 @@
 
 ## R code 8.2
 library(rethinking)
-#rstan_options(auto_write = TRUE)
-#options(mc.cores = parallel::detectCores())
+rstan_options(auto_write = TRUE)
+options(mc.cores = parallel::detectCores())
 
 #Set Data to me mapped
 data(rugged)
