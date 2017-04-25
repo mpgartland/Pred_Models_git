@@ -3,10 +3,10 @@
 
 #Blood test to predict being a vampire works 95% of the time
 PrPV <- 0.95
-# Pr(positve|motal)
+# Pr(positve|mortal)
 PrPM <- 0.01
 #Percent of popultation that is a vampire
-PrV <- 0.001
+PrV <- 0.1
 
 #Bayes Theorm
 #Prob he is a vampire Pr(vampire|positive)
@@ -50,6 +50,8 @@ quantile( samples , 0.8 )
 
 ## R code 3.10
 quantile( samples , c( 0.1 , 0.9 ) )
+
+chainmode(samples)
 
 
 ##################

@@ -28,6 +28,8 @@ m8.1 <- map(
 #Review Model
 precis(m8.1)
 
+plot(m8.1)
+
 ## R code 8.4
 #Simplify the data set
 dd.trim <- dd[ , c("log_gdp","rugged","cont_africa") ]
