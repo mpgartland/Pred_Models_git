@@ -1,0 +1,402 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf820
+{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fnil\fcharset0 Menlo-Regular;\f2\fswiss\fcharset0 Helvetica;
+\f3\fmodern\fcharset0 Courier-Bold;\f4\fnil\fcharset0 Menlo-Bold;\f5\fnil\fcharset0 Menlo-Italic;
+\f6\fnil\fcharset0 HelveticaNeue;\f7\fswiss\fcharset0 Helvetica-Light;\f8\fmodern\fcharset0 CourierNewPSMT;
+}
+{\colortbl;\red255\green255\blue255;\red26\green26\blue26;\red0\green0\blue117;\red234\green234\blue234;
+\red37\green37\blue37;\red16\green121\blue2;\red13\green95\blue24;\red19\green112\blue166;\red184\green73\blue12;
+\red83\green83\blue83;\red29\green111\blue63;\red242\green242\blue242;\red38\green38\blue38;\red79\green143\blue160;
+\red8\green25\blue107;\red50\green91\blue142;\red53\green145\blue93;\red38\green38\blue38;\red242\green242\blue242;
+\red83\green83\blue83;\red52\green52\blue52;\red50\green91\blue142;\red52\green52\blue52;\red252\green252\blue252;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c10196\c10196\c10196;\csgenericrgb\c0\c0\c45882;\csgenericrgb\c91765\c91765\c91765;
+\csgenericrgb\c14510\c14510\c14510;\csgenericrgb\c6275\c47451\c784;\csgenericrgb\c5098\c37255\c9412;\csgenericrgb\c7451\c43922\c65098;\csgenericrgb\c72157\c28627\c4706;
+\csgenericrgb\c32549\c32549\c32549;\csgenericrgb\c11373\c43529\c24706;\csgenericrgb\c94902\c94902\c94902;\csgenericrgb\c14902\c14902\c14902;\csgenericrgb\c30980\c56078\c62745;
+\csgenericrgb\c3137\c9804\c41961;\csgenericrgb\c19608\c35686\c55686;\csgenericrgb\c20784\c56863\c36471;\csgenericrgb\c14902\c14902\c14902;\csgenericrgb\c94902\c94902\c94902;
+\csgenericrgb\c32549\c32549\c32549;\csgenericrgb\c20392\c20392\c20392;\csgenericrgb\c19608\c35686\c55686;\csgenericrgb\c20392\c20392\c20392;\csgenericrgb\c98824\c98824\c98824;
+}
+\margl1440\margr1440\vieww18500\viewh12720\viewkind0
+\deftab720
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf2 \expnd0\expndtw0\kerning0
+sudo pip install scikit-learn spark-sklearn pandas\
+\
+pyspark
+\f1\fs24 \cf3 \cb4 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf3 \
+\
+\
+print\cf5  \cf6 "Hello, Python!"\cf5 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f2\fs36 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+2+2\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\qc\partightenfactor0
+\cf0 FROM: {\field{\*\fldinst{HYPERLINK "https://spark.apache.org/docs/2.1.0/mllib-linear-methods.html"}}{\fldrslt https://spark.apache.org/docs/2.1.0/mllib-linear-methods.html}}\
+\
+Basic Stats\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \
+from 
+\f0\fs32 \cf2 \expnd0\expndtw0\kerning0
+pyspark.mllib.stat import 
+\f3\b\fs34 Statistics
+\f2\b0\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sl316\partightenfactor0
+
+\f3\b\fs26 \cf7 \expnd0\expndtw0\kerning0
+from
+\f0\b0 \cf2  
+\f3\b \cf8 pyspark.mllib.linalg
+\f0\b0 \cf2  
+\f3\b \cf7 import
+\f0\b0 \cf2  Vectors, Matrices\
+
+\f3\b \cf9 o
+\f0\b0 \cf2 bserved \cf10 =\cf2  Vectors\cf10 .\cf2 dense([\cf11 4\cf2 , \cf11 6\cf2 , \cf11 5\cf2 ])\
+pearson \cf10 =\cf2  Statistics\cf10 .\cf2 chiSqTest(observed)\
+
+\f3\b \cf7 print
+\f0\b0 \cf2 (pearson\cf10 .\cf2 statistic)\
+\
+
+\f3\b \cf9 print 
+\f0\b0 \cf2 pearson\cf10 .\cf2 degreesOfFreedom\
+\
+\
+\pard\pardeftab720\sl316\qc\partightenfactor0
+
+\fs28 \cf2 More Stats\
+\pard\pardeftab720\sl316\partightenfactor0
+
+\fs26 \cf2 data \cf10 =\cf2  [\cf11 40.0\cf2 , \cf11 24.0\cf2 , \cf11 29.0\cf2 , \cf11 56.0\cf2 , \cf11 32.0\cf2 , \cf11 42.0\cf2 , \cf11 31.0\cf2 , \cf11 10.0\cf2 , \cf11 0.0\cf2 , \cf11 30.0\cf2 , \cf11 15.0\cf2 , \cf11 12.0\cf2 ]\
+chi \cf10 =\cf2  Statistics\cf10 .\cf2 chiSqTest(Matrices\cf10 .\cf2 dense(\cf11 3\cf2 , \cf11 4\cf2 , data))\
+
+\f3\b \cf7 print
+\f0\b0 \cf2 (\cf7 round\cf2 (chi\cf10 .\cf2 statistic, \cf11 4\cf2 ))\
+\
+\pard\pardeftab720\sl316\qc\partightenfactor0
+
+\fs48 \cf2 SVM
+\fs26 \
+\pard\pardeftab720\sl316\partightenfactor0
+\cf2 \
+\
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f4\b\fs24 \cf7 \cb12 from
+\f1\b0 \cf13  
+\f4\b \cf8 pyspark.mllib.classification
+\f1\b0 \cf13  
+\f4\b \cf7 import
+\f1\b0 \cf13  SVMWithSGD, SVMModel\
+
+\f4\b \cf7 from
+\f1\b0 \cf13  
+\f4\b \cf8 pyspark.mllib.regression
+\f1\b0 \cf13  
+\f4\b \cf7 import
+\f1\b0 \cf13  LabeledPoint\
+\
+
+\f5\i \cf14 # Load and parse the data
+\f1\i0 \cf13 \
+
+\f4\b \cf7 def
+\f1\b0 \cf13  \cf15 parsePoint\cf13 (line):\
+    values \cf10 =\cf13  [\cf7 float\cf13 (x) 
+\f4\b \cf7 for
+\f1\b0 \cf13  x 
+\f4\b \cf7 in
+\f1\b0 \cf13  line\cf10 .\cf13 split(\cf16 ' '\cf13 )]\
+    
+\f4\b \cf7 return
+\f1\b0 \cf13  LabeledPoint(values[\cf17 0\cf13 ], values[\cf17 1\cf13 :])\
+\
+\pard\pardeftab720\sl400\partightenfactor0
+\cf18 \cb19 data \cf20 =\cf18  sc\cf20 .\cf18 textFile(
+\fs22 \cf0 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 "
+\f6\fs28 \cf21 \expnd0\expndtw0\kerning0
+\CocoaLigature1 s3://
+\f1\fs24 \cf22 \cb19 gartland/mllib/sample_svm_data.txt
+\fs22 \cf0 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 "
+\fs24 \cf18 \cb19 \expnd0\expndtw0\kerning0
+\CocoaLigature1 )\
+parsedData \cf20 =\cf18  data\cf20 .\cf18 map(parsePoint)\cf13 \cb12 \
+\
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f5\i \cf14 # Build the model
+\f1\i0 \cf13 \
+model \cf10 =\cf13  SVMWithSGD\cf10 .\cf13 train(parsedData, iterations\cf10 =\cf17 100\cf13 )\
+\
+
+\f5\i \cf14 # Evaluating the model on training data
+\f1\i0 \cf13 \
+labelsAndPreds \cf10 =\cf13  parsedData\cf10 .\cf13 map(
+\f4\b \cf7 lambda
+\f1\b0 \cf13  p: (p\cf10 .\cf13 label, model\cf10 .\cf13 predict(p\cf10 .\cf13 features)))\
+trainErr \cf10 =\cf13  labelsAndPreds\cf10 .\cf13 filter(
+\f4\b \cf7 lambda
+\f1\b0 \cf13  (v, p): v \cf10 !=\cf13  p)\cf10 .\cf13 count() \cf10 /\cf13  \cf7 float\cf13 (parsedData\cf10 .\cf13 count())\
+
+\f4\b \cf7 print
+\f1\b0 \cf13 (\cf16 "Training Error = "\cf13  \cf10 +\cf13  \cf7 str\cf13 (trainErr))\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+
+\fs22 \cf0 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 FROM: {\field{\*\fldinst{HYPERLINK "https://spark.apache.org/docs/2.1.0/mllib-linear-methods.html"}}{\fldrslt https://spark.apache.org/docs/2.1.0/mllib-linear-methods.html}}\
+\
+\
+\pard\pardeftab720\sl400\qc\partightenfactor0
+
+\fs36 \cf13 \cb12 \expnd0\expndtw0\kerning0
+\CocoaLigature1 Logistic Regression
+\fs22 \cf0 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sl400\partightenfactor0
+
+\fs24 \cf13 \cb12 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+Logistic Regression\
+\
+
+\f4\b \cf7 from
+\f1\b0 \cf13  
+\f4\b \cf8 pyspark.mllib.classification
+\f1\b0 \cf13  
+\f4\b \cf7 import
+\f1\b0 \cf13  LogisticRegressionWithLBFGS, LogisticRegressionModel\
+
+\f4\b \cf7 from
+\f1\b0 \cf13  
+\f4\b \cf8 pyspark.mllib.regression
+\f1\b0 \cf13  
+\f4\b \cf7 import
+\f1\b0 \cf13  LabeledPoint\
+\
+\
+
+\f5\i \cf14 # Build the model
+\f1\i0 \cf13 \
+model \cf10 =\cf13  LogisticRegressionWithLBFGS\cf10 .\cf13 train(parsedData)\
+\
+
+\f5\i \cf14 # Evaluating the model on training data
+\f1\i0 \cf13 \
+labelsAndPreds \cf10 =\cf13  parsedData\cf10 .\cf13 map(
+\f4\b \cf7 lambda
+\f1\b0 \cf13  p: (p\cf10 .\cf13 label, model\cf10 .\cf13 predict(p\cf10 .\cf13 features)))\
+trainErr \cf10 =\cf13  labelsAndPreds\cf10 .\cf13 filter(
+\f4\b \cf7 lambda
+\f1\b0 \cf13  (v, p): v \cf10 !=\cf13  p)\cf10 .\cf13 count() \cf10 /\cf13  \cf7 float\cf13 (parsedData\cf10 .\cf13 count())\
+
+\f4\b \cf7 print
+\f1\b0 \cf13 (\cf16 "Training Error = "\cf13  \cf10 +\cf13  \cf7 str\cf13 (trainErr))\
+\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf2 \cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+
+\fs48 \cf2 						MORE logistic Regression\
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f4\b\fs24 \cf7 \cb12 from
+\f1\b0 \cf13  
+\f4\b \cf8 pyspark.ml.classification
+\f1\b0 \cf13  
+\f4\b \cf7 import
+\f1\b0 \cf13  LogisticRegression\
+\
+
+\f5\i \cf14 # Load training data
+\f1\i0 \cf13 \
+training \cf10 =\cf13  sqlContext\cf10 .\cf13 read\cf10 .\cf13 format(\cf16 "libsvm"\cf13 )\cf10 .\cf13 load(\cf16 "
+\f6\fs28 \cf23 \cb1 s3://
+\f1\fs24 \cf16 \cb12 gartland/mllib/sample_libsvm_data.txt"\cf13 )\
+\
+lr \cf10 =\cf13  LogisticRegression(maxIter\cf10 =\cf17 10\cf13 , regParam\cf10 =\cf17 0.3\cf13 , elasticNetParam\cf10 =\cf17 0.8\cf13 )\
+\
+
+\f5\i \cf14 # Fit the model
+\f1\i0 \cf13 \
+lrModel \cf10 =\cf13  lr\cf10 .\cf13 fit(training)\
+\
+
+\f5\i \cf14 # Print the coefficients and intercept for logistic regression
+\f1\i0 \cf13 \
+
+\f4\b \cf7 print
+\f1\b0 \cf13 (\cf16 "Coefficients: "\cf13  \cf10 +\cf13  \cf7 str\cf13 (lrModel\cf10 .\cf13 coefficients))\
+
+\f4\b \cf7 print
+\f1\b0 \cf13 (\cf16 "Intercept: "\cf13  \cf10 +\cf13  \cf7 str\cf13 (lrModel\cf10 .\cf13 intercept))\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf2 \cb1 \
+\pard\pardeftab720\sl316\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl400\sa200\qc\partightenfactor0
+
+\f2\fs38 \cf23 Random Forest Example\
+\pard\pardeftab720\sl485\partightenfactor0
+
+\f7\fs34 \cf23 \
+\pard\pardeftab720\sl316\partightenfactor0
+
+\f0\fs26 \cf2 \
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f4\b\fs24 \cf7 \cb12 from
+\f1\b0 \cf13  
+\f4\b \cf8 pyspark.mllib.tree
+\f1\b0 \cf13  
+\f4\b \cf7 import
+\f1\b0 \cf13  RandomForest, RandomForestModel\
+
+\f4\b \cf7 from
+\f1\b0 \cf13  
+\f4\b \cf8 pyspark.mllib.util
+\f1\b0 \cf13  
+\f4\b \cf7 import
+\f1\b0 \cf13  MLUtils\
+\
+
+\f5\i \cf14 # Load and parse the data file into an RDD of LabeledPoint.
+\f1\i0 \cf13 \
+data \cf10 =\cf13  MLUtils\cf10 .\cf13 loadLibSVMFile(sc, \cf16 "
+\f6\fs28 \cf23 \cb1 s3://
+\f1\fs24 \cf16 \cb12 gartland/mllib/sample_libsvm_data.txt"\cf13 )\
+
+\f5\i \cf14 # Split the data into training and test sets (30% held out for testing)
+\f1\i0 \cf13 \
+(trainingData, testData) \cf10 =\cf13  data\cf10 .\cf13 randomSplit([\cf17 0.7\cf13 , \cf17 0.3\cf13 ])\
+\
+
+\f5\i \cf14 # Train a RandomForest model.
+\f1\i0 \cf13 \
+
+\f5\i \cf14 #  Empty categoricalFeaturesInfo indicates all features are continuous.
+\f1\i0 \cf13 \
+
+\f5\i \cf14 #  Note: Use larger numTrees in practice.
+\f1\i0 \cf13 \
+
+\f5\i \cf14 #  Setting featureSubsetStrategy="auto" lets the algorithm choose.
+\f1\i0 \cf13 \
+model \cf10 =\cf13  RandomForest\cf10 .\cf13 trainClassifier(trainingData, numClasses\cf10 =\cf17 2\cf13 , categoricalFeaturesInfo\cf10 =\cf13 \{\},\
+                                     numTrees\cf10 =\cf17 300\cf13 , featureSubsetStrategy\cf10 =\cf16 "auto"\cf13 ,\
+                                     impurity\cf10 =\cf16 'gini'\cf13 , maxDepth\cf10 =\cf17 4\cf13 , maxBins\cf10 =\cf17 32\cf13 )\
+\
+
+\f5\i \cf14 # Evaluate model on test instances and compute test error
+\f1\i0 \cf13 \
+predictions \cf10 =\cf13  model\cf10 .\cf13 predict(testData\cf10 .\cf13 map(
+\f4\b \cf7 lambda
+\f1\b0 \cf13  x: x\cf10 .\cf13 features))\
+labelsAndPredictions \cf10 =\cf13  testData\cf10 .\cf13 map(
+\f4\b \cf7 lambda
+\f1\b0 \cf13  lp: lp\cf10 .\cf13 label)\cf10 .\cf13 zip(predictions)\
+testErr \cf10 =\cf13  labelsAndPredictions\cf10 .\cf13 filter(
+\f4\b \cf7 lambda
+\f1\b0 \cf13  (v, p): v \cf10 !=\cf13  p)\cf10 .\cf13 count() \cf10 /\cf13  \cf7 float\cf13 (testData\cf10 .\cf13 count())\
+
+\f4\b \cf7 print
+\f1\b0 \cf13 (\cf16 'Test Error = '\cf13  \cf10 +\cf13  \cf7 str\cf13 (testErr))\
+
+\f4\b \cf7 print
+\f1\b0 \cf13 (\cf16 'Learned classification forest model:'\cf13 )\
+
+\f4\b \cf7 print
+\f1\b0 \cf13 (model\cf10 .\cf13 toDebugString())\
+\pard\pardeftab720\sl308\partightenfactor0
+
+\f8\fs28 \cf23 \cb24 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf2 \cb1 \
+\
+\pard\pardeftab720\sl400\sa200\qc\partightenfactor0
+
+\f2\fs38 \cf23 Gradient-Boosted Trees Example\
+\pard\pardeftab720\sl400\partightenfactor0
+
+\f4\b\fs24 \cf7 \cb12 from
+\f1\b0 \cf13  
+\f4\b \cf8 pyspark.mllib.tree
+\f1\b0 \cf13  
+\f4\b \cf7 import
+\f1\b0 \cf13  GradientBoostedTrees, GradientBoostedTreesModel\
+
+\f4\b \cf7 from
+\f1\b0 \cf13  
+\f4\b \cf8 pyspark.mllib.util
+\f1\b0 \cf13  
+\f4\b \cf7 import
+\f1\b0 \cf13  MLUtils\
+\
+
+\f5\i \cf14 # Load and parse the data file.
+\f1\i0 \cf13 \
+data \cf10 =\cf13  MLUtils\cf10 .\cf13 loadLibSVMFile(sc, \cf16 "
+\f6\fs28 \cf23 \cb1 s3://
+\f1\fs24 \cf16 \cb12 gartland/mllib/sample_libsvm_data.txt"\cf13 )\
+
+\f5\i \cf14 # Split the data into training and test sets (30% held out for testing)
+\f1\i0 \cf13 \
+(trainingData, testData) \cf10 =\cf13  data\cf10 .\cf13 randomSplit([\cf17 0.7\cf13 , \cf17 0.3\cf13 ])\
+\
+
+\f5\i \cf14 # Train a GradientBoostedTrees model.
+\f1\i0 \cf13 \
+
+\f5\i \cf14 #  Notes: (a) Empty categoricalFeaturesInfo indicates all features are continuous.
+\f1\i0 \cf13 \
+
+\f5\i \cf14 #         (b) Use more iterations in practice.
+\f1\i0 \cf13 \
+model \cf10 =\cf13  GradientBoostedTrees\cf10 .\cf13 trainClassifier(trainingData,\
+                                             categoricalFeaturesInfo\cf10 =\cf13 \{\}, numIterations\cf10 =\cf17 3\cf13 )\
+\
+
+\f5\i \cf14 # Evaluate model on test instances and compute test error
+\f1\i0 \cf13 \
+predictions \cf10 =\cf13  model\cf10 .\cf13 predict(testData\cf10 .\cf13 map(
+\f4\b \cf7 lambda
+\f1\b0 \cf13  x: x\cf10 .\cf13 features))\
+labelsAndPredictions \cf10 =\cf13  testData\cf10 .\cf13 map(
+\f4\b \cf7 lambda
+\f1\b0 \cf13  lp: lp\cf10 .\cf13 label)\cf10 .\cf13 zip(predictions)\
+testErr \cf10 =\cf13  labelsAndPredictions\cf10 .\cf13 filter(
+\f4\b \cf7 lambda
+\f1\b0 \cf13  (v, p): v \cf10 !=\cf13  p)\cf10 .\cf13 count() \cf10 /\cf13  \cf7 float\cf13 (testData\cf10 .\cf13 count())\
+
+\f4\b \cf7 print
+\f1\b0 \cf13 (\cf16 'Test Error = '\cf13  \cf10 +\cf13  \cf7 str\cf13 (testErr))\
+
+\f4\b \cf7 print
+\f1\b0 \cf13 (\cf16 'Learned classification GBT model:'\cf13 )\
+
+\f4\b \cf7 print
+\f1\b0 \cf13 (model\cf10 .\cf13 toDebugString())\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf2 \cb1 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://databricks.com/blog/2016/02/08/auto-scaling-scikit-learn-with-spark.html"}}{\fldrslt \cf2 https://databricks.com/blog/2016/02/08/auto-scaling-scikit-learn-with-spark.html}}\
+\
+\
+\
+SparkR\
+\
+}
