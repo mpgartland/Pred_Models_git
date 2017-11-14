@@ -1,3 +1,9 @@
+#Install Rethinking
+install.packages(c("coda","mvtnorm","devtools","loo"))
+library(devtools)
+devtools::install_github("rmcelreath/rethinking")
+
+
 
 ## R code 8.2
 library(rethinking)
