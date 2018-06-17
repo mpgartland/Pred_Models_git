@@ -1,6 +1,6 @@
 #A continuous Target
 
-setwd('/Users/mpgartland/Documents/Courses/Predictive Models/Pred_Models_git/Week 5/data')
+setwd('/Users/mylesgartland/OneDrive - Rockhurst University/Courses/Predictive Models/Pred_Models_git/Week 5/data')
 ## Step 2: Exploring and preparing the data ----
 # read in data and examine structure
 concrete <- read.csv("concrete.csv")
