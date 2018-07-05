@@ -6,7 +6,7 @@ setwd('/Users/mylesgartland/OneDrive - Rockhurst University/Courses/Predictive M
 concrete <- read.csv("concrete.csv")
 str(concrete)
 
-
+boxplot(concrete)
 
 #custom normalization function
 #This is called min/max normalization (vs z-score)
