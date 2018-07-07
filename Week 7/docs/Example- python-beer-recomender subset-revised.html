@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Example- python-beer-recomender</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Example- python-beer-recomender subset-revised</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -13,8 +11,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1109,7 +1107,6 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2538,7 +2535,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3029,7 +3025,6 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8760,6 +8755,9 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
+[dir="rtl"] #ipython_notebook {
+  float: right !important;
+}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8962,8 +8960,14 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
+[dir="rtl"] #tabs li {
+  float: right;
+}
 ul#tabs {
   margin-bottom: 4px;
+}
+[dir="rtl"] ul#tabs {
+  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8986,6 +8990,16 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
+}
+[dir="rtl"] .list_toolbar .tree-buttons {
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-right {
+  padding-top: 1px;
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-left {
+  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9122,6 +9136,9 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
+[dir="rtl"] #tree-selector a {
+  float: right;
+}
 #button-select-all {
   min-width: 50px;
 }
@@ -9211,6 +9228,9 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
+[dir="rtl"] #new-menu {
+  text-align: right;
+}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9255,6 +9275,9 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
+}
+[dir="rtl"] #running .col-sm-8 {
+  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9551,6 +9574,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9571,11 +9595,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11246,7 +11265,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 20ex;
+  width: 21ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11558,6 +11577,7 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
+  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11571,6 +11591,9 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
+}
+.terminal-app .terminal .xterm-rows {
+  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11631,8 +11654,10 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11643,9 +11668,11 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11699,9 +11726,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11722,7 +11747,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11746,8 +11771,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11759,12 +11783,13 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pylab</span> <span class="k">as</span> <span class="nn">pl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 
 </div>
@@ -11772,8 +11797,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11784,10 +11808,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">mpgartland</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">Courses</span><span class="o">/</span><span class="n">Predictive</span> <span class="n">Models</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">mylesgartland</span><span class="o">/</span><span class="n">OneDrive</span> <span class="o">-</span> <span class="n">Rockhurst</span> <span class="n">University</span><span class="o">/</span><span class="n">Courses</span><span class="o">/</span><span class="n">Predictive</span> <span class="n">Models</span>
 </pre></div>
 
 </div>
@@ -11798,9 +11822,13 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>/Users/mpgartland/Documents/Courses/Predictive Models
+<pre>/Users/mylesgartland/OneDrive - Rockhurst University/Courses/Predictive Models
 </pre>
 </div>
 </div>
@@ -11811,12 +11839,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># substitute your name here. If you&#39;re on windows you&#39;ll need a different filepath</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;beer_reviews.csv&quot;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;beer_reviews.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;iso-8859-1&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11827,10 +11855,27 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[26]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -12091,8 +12136,745 @@ div#notebook {
       <td>4.7</td>
       <td>52159</td>
     </tr>
+    <tr>
+      <th>15</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1316025612</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>2.5</td>
+      <td>Beerandraiderfan</td>
+      <td>Oatmeal Stout</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>Caldera Oatmeal Stout</td>
+      <td>7.2</td>
+      <td>10789</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1103502339</td>
+      <td>2.0</td>
+      <td>1.5</td>
+      <td>2.5</td>
+      <td>RedDiamond</td>
+      <td>Oatmeal Stout</td>
+      <td>2.5</td>
+      <td>2.0</td>
+      <td>Caldera Oatmeal Stout</td>
+      <td>7.2</td>
+      <td>10789</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1062311123</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>beerguy101</td>
+      <td>American Pale Lager</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>Caldera OBF 15</td>
+      <td>5.6</td>
+      <td>12386</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>163</td>
+      <td>Amstel Brouwerij B. V.</td>
+      <td>1010861086</td>
+      <td>2.5</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>jdhilt</td>
+      <td>Light Lager</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>Amstel Light</td>
+      <td>3.5</td>
+      <td>436</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1325478004</td>
+      <td>4.5</td>
+      <td>4.5</td>
+      <td>3.0</td>
+      <td>UCLABrewN84</td>
+      <td>Rauchbier</td>
+      <td>4.0</td>
+      <td>4.5</td>
+      <td>Rauch Ãr Bock</td>
+      <td>7.4</td>
+      <td>58046</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1325360812</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>zaphodchak</td>
+      <td>Rauchbier</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>Rauch Ãr Bock</td>
+      <td>7.4</td>
+      <td>58046</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1322506304</td>
+      <td>4.0</td>
+      <td>4.5</td>
+      <td>4.0</td>
+      <td>Tilley4</td>
+      <td>Rauchbier</td>
+      <td>3.5</td>
+      <td>4.0</td>
+      <td>Rauch Ãr Bock</td>
+      <td>7.4</td>
+      <td>58046</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1320494397</td>
+      <td>4.5</td>
+      <td>5.0</td>
+      <td>4.5</td>
+      <td>mikedrinksbeer2</td>
+      <td>Rauchbier</td>
+      <td>4.0</td>
+      <td>4.5</td>
+      <td>Rauch Ãr Bock</td>
+      <td>7.4</td>
+      <td>58046</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1320140421</td>
+      <td>4.0</td>
+      <td>4.5</td>
+      <td>4.0</td>
+      <td>dbmernin83</td>
+      <td>Rauchbier</td>
+      <td>4.0</td>
+      <td>4.5</td>
+      <td>Rauch Ãr Bock</td>
+      <td>7.4</td>
+      <td>58046</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1319847514</td>
+      <td>4.5</td>
+      <td>4.5</td>
+      <td>4.0</td>
+      <td>titosupertramp</td>
+      <td>Rauchbier</td>
+      <td>4.0</td>
+      <td>4.5</td>
+      <td>Rauch Ãr Bock</td>
+      <td>7.4</td>
+      <td>58046</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1318802642</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>3.5</td>
+      <td>optimator13</td>
+      <td>Rauchbier</td>
+      <td>3.5</td>
+      <td>5.0</td>
+      <td>Rauch Ãr Bock</td>
+      <td>7.4</td>
+      <td>58046</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1318290101</td>
+      <td>4.5</td>
+      <td>4.5</td>
+      <td>4.0</td>
+      <td>Blakaeris</td>
+      <td>Rauchbier</td>
+      <td>4.0</td>
+      <td>4.5</td>
+      <td>Rauch Ãr Bock</td>
+      <td>7.4</td>
+      <td>58046</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1318289482</td>
+      <td>4.5</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>bashiba</td>
+      <td>Rauchbier</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>Rauch Ãr Bock</td>
+      <td>7.4</td>
+      <td>58046</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1316405909</td>
+      <td>4.5</td>
+      <td>4.5</td>
+      <td>3.5</td>
+      <td>Klym</td>
+      <td>Rauchbier</td>
+      <td>4.0</td>
+      <td>4.5</td>
+      <td>Rauch Ãr Bock</td>
+      <td>7.4</td>
+      <td>58046</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1315696563</td>
+      <td>4.5</td>
+      <td>4.5</td>
+      <td>4.0</td>
+      <td>flexabull</td>
+      <td>Rauchbier</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>Rauch Ãr Bock</td>
+      <td>7.4</td>
+      <td>58046</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1204256003</td>
+      <td>4.0</td>
+      <td>3.5</td>
+      <td>4.0</td>
+      <td>Spikester</td>
+      <td>American Pale Ale (APA)</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1199158664</td>
+      <td>3.0</td>
+      <td>2.5</td>
+      <td>3.0</td>
+      <td>Dubbercody</td>
+      <td>American Pale Ale (APA)</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>122</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1198817492</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>3.5</td>
+      <td>ChainGangGuy</td>
+      <td>American Pale Ale (APA)</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>123</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1190043490</td>
+      <td>4.5</td>
+      <td>4.0</td>
+      <td>4.5</td>
+      <td>Vancer</td>
+      <td>American Pale Ale (APA)</td>
+      <td>4.5</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>124</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1188970905</td>
+      <td>4.5</td>
+      <td>3.5</td>
+      <td>3.5</td>
+      <td>ghostwalker</td>
+      <td>American Pale Ale (APA)</td>
+      <td>3.5</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>125</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1186867975</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>4.5</td>
+      <td>udubdawg</td>
+      <td>American Pale Ale (APA)</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1275439462</td>
+      <td>4.0</td>
+      <td>3.5</td>
+      <td>2.5</td>
+      <td>Bfarr</td>
+      <td>American Pale Ale (APA)</td>
+      <td>3.0</td>
+      <td>4.5</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>127</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1182308568</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>cburian</td>
+      <td>American Pale Ale (APA)</td>
+      <td>4.0</td>
+      <td>4.5</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1181450867</td>
+      <td>4.5</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>flexabull</td>
+      <td>American Pale Ale (APA)</td>
+      <td>3.5</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1177638920</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>3.5</td>
+      <td>mnwags</td>
+      <td>American Pale Ale (APA)</td>
+      <td>2.5</td>
+      <td>3.5</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1170714306</td>
+      <td>4.5</td>
+      <td>4.0</td>
+      <td>3.5</td>
+      <td>NeroFiddled</td>
+      <td>American Pale Ale (APA)</td>
+      <td>4.5</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1160699043</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>3.5</td>
+      <td>IntriqKen</td>
+      <td>American Pale Ale (APA)</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1160265839</td>
+      <td>3.5</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>JoshD</td>
+      <td>American Pale Ale (APA)</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1157665307</td>
+      <td>4.0</td>
+      <td>3.5</td>
+      <td>4.0</td>
+      <td>lackenhauser</td>
+      <td>American Pale Ale (APA)</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1154568582</td>
+      <td>4.5</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>kgotcher</td>
+      <td>American Pale Ale (APA)</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1154067787</td>
+      <td>4.5</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>MLegendre</td>
+      <td>American Pale Ale (APA)</td>
+      <td>3.5</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1148947298</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>freed</td>
+      <td>American Pale Ale (APA)</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1147643598</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>3.5</td>
+      <td>ddarden</td>
+      <td>American Pale Ale (APA)</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1147583357</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>3.5</td>
+      <td>ElGordo</td>
+      <td>American Pale Ale (APA)</td>
+      <td>4.0</td>
+      <td>3.5</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1132082651</td>
+      <td>4.5</td>
+      <td>4.5</td>
+      <td>4.5</td>
+      <td>BuckeyeNation</td>
+      <td>American Pale Ale (APA)</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1124731747</td>
+      <td>4.0</td>
+      <td>3.5</td>
+      <td>4.0</td>
+      <td>Reidrover</td>
+      <td>American Pale Ale (APA)</td>
+      <td>3.5</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1326212716</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>BeerLover99</td>
+      <td>American Pale Ale (APA)</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1322517349</td>
+      <td>3.5</td>
+      <td>4.0</td>
+      <td>3.5</td>
+      <td>syrupjoe</td>
+      <td>American Pale Ale (APA)</td>
+      <td>4.0</td>
+      <td>3.5</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1321322911</td>
+      <td>4.0</td>
+      <td>4.5</td>
+      <td>4.0</td>
+      <td>BrewerB</td>
+      <td>American Pale Ale (APA)</td>
+      <td>4.5</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1274928281</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>3.5</td>
+      <td>robwestcott</td>
+      <td>American Pale Ale (APA)</td>
+      <td>4.0</td>
+      <td>3.5</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1320470970</td>
+      <td>3.5</td>
+      <td>3.5</td>
+      <td>4.5</td>
+      <td>vande</td>
+      <td>American Pale Ale (APA)</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1320422191</td>
+      <td>4.0</td>
+      <td>3.5</td>
+      <td>4.0</td>
+      <td>ColForbinBC</td>
+      <td>American Pale Ale (APA)</td>
+      <td>3.5</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1318247779</td>
+      <td>3.0</td>
+      <td>2.5</td>
+      <td>3.5</td>
+      <td>harrymel</td>
+      <td>American Pale Ale (APA)</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1316727048</td>
+      <td>4.0</td>
+      <td>3.5</td>
+      <td>4.5</td>
+      <td>woosterbill</td>
+      <td>American Pale Ale (APA)</td>
+      <td>3.5</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>1075</td>
+      <td>Caldera Brewing Company</td>
+      <td>1315501843</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>4.5</td>
+      <td>ReelBigwigFish</td>
+      <td>American Pale Ale (APA)</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>Caldera Pale Ale</td>
+      <td>5.5</td>
+      <td>25414</td>
+    </tr>
   </tbody>
 </table>
+<p>150 rows × 13 columns</p>
 </div>
 </div>
 
@@ -12104,7 +12886,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
@@ -12118,7 +12900,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[27]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12131,8 +12917,213 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Check-for-and-remove-nulls">Check for and remove nulls<a class="anchor-link" href="#Check-for-and-remove-nulls">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[83]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>brewery_id            0
+brewery_name          0
+review_time           0
+review_overall        0
+review_aroma          0
+review_appearance     0
+review_profilename    0
+beer_style            0
+review_palate         0
+review_taste          0
+beer_name             0
+beer_abv              0
+beer_beerid           0
+dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[84]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>brewery_id            0
+brewery_name          0
+review_time           0
+review_overall        0
+review_aroma          0
+review_appearance     0
+review_profilename    0
+beer_style            0
+review_palate         0
+review_taste          0
+beer_name             0
+beer_abv              0
+beer_beerid           0
+dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dtype_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">dtype_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Count&quot;</span><span class="p">,</span> <span class="s2">&quot;Column Type&quot;</span><span class="p">]</span>
+<span class="n">dtype_df</span>
+<span class="n">dtype_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Column Type&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[85]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Column Type</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>int64</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>float64</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>object</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">attName</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">dType</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">attName</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">attName</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="nb">float</span> <span class="ow">or</span> <span class="n">df</span><span class="p">[</span><span class="n">attName</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">attName</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">attName</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12142,7 +13133,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">beer_1</span><span class="p">,</span> <span class="n">beer_2</span> <span class="o">=</span> <span class="s2">&quot;Dale&#39;s Pale Ale&quot;</span><span class="p">,</span> <span class="s2">&quot;Fat Tire Amber Ale&quot;</span>
@@ -12162,27 +13153,35 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Users in the sameset: %d
 </pre>
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[22]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[87]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;cswhitehorse&#39;,
- &#39;jneiswender&#39;,
- &#39;granger10&#39;,
- &#39;richkrull&#39;,
- &#39;Gueuzedude&#39;,
- &#39;alexgash&#39;,
- &#39;aepb1&#39;,
- &#39;hiikeeba&#39;,
- &#39;jar2574&#39;,
- &#39;KeefD&#39;]</pre>
+<pre>[&#39;Samp01&#39;,
+ &#39;kawilliams81&#39;,
+ &#39;beveritt&#39;,
+ &#39;LiquidBread219&#39;,
+ &#39;Beefeater57&#39;,
+ &#39;BerkeleyBeerMan&#39;,
+ &#39;BWMKappaSig&#39;,
+ &#39;CraftBeerTastic&#39;,
+ &#39;prototypic&#39;,
+ &#39;Proteus93&#39;]</pre>
 </div>
 
 </div>
@@ -12191,8 +13190,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12202,12 +13200,62 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[88]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">beer_1</span><span class="p">,</span> <span class="n">beer_2</span> <span class="o">=</span> <span class="s2">&quot;Samuel Adams Octoberfest&quot;</span><span class="p">,</span> <span class="s2">&quot;Caldera Ginger Beer&quot;</span>
+
+<span class="n">beer_1_reviewers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">beer_name</span><span class="o">==</span><span class="n">beer_1</span><span class="p">]</span><span class="o">.</span><span class="n">review_profilename</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">beer_2_reviewers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">beer_name</span><span class="o">==</span><span class="n">beer_2</span><span class="p">]</span><span class="o">.</span><span class="n">review_profilename</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">common_reviewers</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">beer_1_reviewers</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">beer_2_reviewers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Users in the sameset: </span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">common_reviewers</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">common_reviewers</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Users in the sameset: %d
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[88]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;LordAdmNelson&#39;, &#39;Reidrover&#39;, &#39;augustgarage&#39;, &#39;Halcyondays&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_beer_reviews</span><span class="p">(</span><span class="n">beer</span><span class="p">,</span> <span class="n">common_users</span><span class="p">):</span>
     <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">review_profilename</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">common_users</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">beer_name</span><span class="o">==</span><span class="n">beer</span><span class="p">)</span>
-    <span class="n">reviews</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;review_profilename&#39;</span><span class="p">)</span>
+    <span class="n">reviews</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;review_profilename&#39;</span><span class="p">)</span>
     <span class="n">reviews</span> <span class="o">=</span> <span class="n">reviews</span><span class="p">[</span><span class="n">reviews</span><span class="o">.</span><span class="n">review_profilename</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">==</span><span class="kc">False</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">reviews</span>
 <span class="n">beer_1_reviews</span> <span class="o">=</span> <span class="n">get_beer_reviews</span><span class="p">(</span><span class="n">beer_1</span><span class="p">,</span> <span class="n">common_reviewers</span><span class="p">)</span>
@@ -12225,18 +13273,27 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/mpgartland/anaconda/lib/python3.5/site-packages/ipykernel/__main__.py:3: FutureWarning: sort(columns=....) is deprecated, use sort_values(by=.....)
-  app.launch_new_instance()
-</pre>
-</div>
-</div>
+<div class="output_area">
 
-<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
+<div class="prompt output_prompt">Out[89]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -12251,47 +13308,38 @@ div#notebook {
   </thead>
   <tbody>
     <tr>
-      <th>202456</th>
-      <td>Fat Tire Amber Ale</td>
-      <td>ATPete</td>
-      <td>4.5</td>
-      <td>4.0</td>
+      <th>13</th>
+      <td>Caldera Ginger Beer</td>
+      <td>Halcyondays</td>
       <td>4.0</td>
       <td>4.5</td>
-    </tr>
-    <tr>
-      <th>201458</th>
-      <td>Fat Tire Amber Ale</td>
-      <td>AdamBear</td>
-      <td>3.5</td>
       <td>2.5</td>
-      <td>4.5</td>
-      <td>3.5</td>
-    </tr>
-    <tr>
-      <th>201886</th>
-      <td>Fat Tire Amber Ale</td>
-      <td>AlCaponeJunior</td>
-      <td>2.0</td>
-      <td>3.0</td>
-      <td>3.5</td>
       <td>3.0</td>
     </tr>
     <tr>
-      <th>202481</th>
-      <td>Fat Tire Amber Ale</td>
-      <td>AltBock</td>
+      <th>8</th>
+      <td>Caldera Ginger Beer</td>
+      <td>LordAdmNelson</td>
       <td>4.0</td>
       <td>3.0</td>
-      <td>3.0</td>
-      <td>3.0</td>
+      <td>3.5</td>
+      <td>4.0</td>
     </tr>
     <tr>
-      <th>201803</th>
-      <td>Fat Tire Amber Ale</td>
-      <td>Andreji</td>
+      <th>6</th>
+      <td>Caldera Ginger Beer</td>
+      <td>Reidrover</td>
+      <td>3.5</td>
+      <td>3.5</td>
       <td>4.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Caldera Ginger Beer</td>
+      <td>augustgarage</td>
       <td>4.5</td>
+      <td>3.5</td>
       <td>4.0</td>
       <td>4.0</td>
     </tr>
@@ -12306,8 +13354,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12317,17 +13364,23 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[95]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># choose your own way to calculate distance</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="k">import</span> <span class="n">euclidean_distances</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="k">import</span> <span class="n">manhattan_distances</span>
-<span class="c1">#from scipy.stats.stats import pearsonr</span>
-<span class="c1">#from sklearn.metrics.pairwise import cosine_similarity</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ALL_FEATURES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;review_overall&#39;</span><span class="p">,</span> <span class="s1">&#39;review_aroma&#39;</span><span class="p">,</span> <span class="s1">&#39;review_palate&#39;</span><span class="p">,</span> <span class="s1">&#39;review_taste&#39;</span><span class="p">,</span> <span class="s1">&#39;review_appearance&#39;</span><span class="p">]</span>
+</pre></div>
 
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[96]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 
 <span class="n">ALL_FEATURES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;review_overall&#39;</span><span class="p">,</span> <span class="s1">&#39;review_aroma&#39;</span><span class="p">,</span> <span class="s1">&#39;review_palate&#39;</span><span class="p">,</span> <span class="s1">&#39;review_taste&#39;</span><span class="p">]</span>
 <span class="k">def</span> <span class="nf">calculate_similarity</span><span class="p">(</span><span class="n">beer1</span><span class="p">,</span> <span class="n">beer2</span><span class="p">):</span>
@@ -12341,8 +13394,7 @@ div#notebook {
     <span class="n">beer_2_reviews</span> <span class="o">=</span> <span class="n">get_beer_reviews</span><span class="p">(</span><span class="n">beer2</span><span class="p">,</span> <span class="n">common_reviewers</span><span class="p">)</span>
     <span class="n">dists</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">ALL_FEATURES</span><span class="p">:</span>
-        <span class="n">dists</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">euclidean_distances</span><span class="p">(</span><span class="n">beer_1_reviews</span><span class="p">[</span><span class="n">f</span><span class="p">],</span> <span class="n">beer_2_reviews</span><span class="p">[</span><span class="n">f</span><span class="p">])[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-    
+        <span class="n">dists</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">euclidean_distances</span><span class="p">([</span><span class="n">beer_1_reviews</span><span class="p">[</span><span class="n">f</span><span class="p">]],</span> <span class="p">[</span><span class="n">beer_2_reviews</span><span class="p">[</span><span class="n">f</span><span class="p">]])[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">dists</span>
 
 <span class="n">calculate_similarity</span><span class="p">(</span><span class="n">beer_1</span><span class="p">,</span> <span class="n">beer_2</span><span class="p">)</span>
@@ -12356,11 +13408,15 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[96]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[17.4928556845359, 17.284386017443605, 16.545392107774298, 17.592612085759182]</pre>
+<pre>[0.8660254037844386, 1.118033988749895, 1.5, 1.3228756555322954]</pre>
 </div>
 
 </div>
@@ -12369,8 +13425,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12380,10 +13435,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[97]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># calculate only a subset for the demo</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 <span class="n">beers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Dale&#39;s Pale Ale&quot;</span><span class="p">,</span> <span class="s2">&quot;Sierra Nevada Pale Ale&quot;</span><span class="p">,</span> <span class="s2">&quot;Michelob Ultra&quot;</span><span class="p">,</span>
         <span class="s2">&quot;Natural Light&quot;</span><span class="p">,</span> <span class="s2">&quot;Bud Light&quot;</span><span class="p">,</span> <span class="s2">&quot;Fat Tire Amber Ale&quot;</span><span class="p">,</span> <span class="s2">&quot;Coors Light&quot;</span><span class="p">,</span>
          <span class="s2">&quot;Blue Moon Belgian White&quot;</span><span class="p">,</span> <span class="s2">&quot;60 Minute IPA&quot;</span><span class="p">,</span> <span class="s2">&quot;Guinness Draught&quot;</span><span class="p">,</span> <span class="s2">&quot;Old Rasputin Russian Imperial Stout&quot;</span><span class="p">,</span>
@@ -12397,7 +13453,8 @@ div#notebook {
 
 <span class="n">simple_distances</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">beer1</span> <span class="ow">in</span> <span class="n">beers</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;starting&quot;</span><span class="p">),</span> <span class="n">beer1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;starting&quot;</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">beer1</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">beer2</span> <span class="ow">in</span> <span class="n">beers</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">beer1</span> <span class="o">!=</span> <span class="n">beer2</span><span class="p">:</span>
             <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="n">beer1</span><span class="p">,</span> <span class="n">beer2</span><span class="p">]</span> <span class="o">+</span> <span class="n">calculate_similarity</span><span class="p">(</span><span class="n">beer1</span><span class="p">,</span> <span class="n">beer2</span><span class="p">)</span>
@@ -12412,38 +13469,72 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>starting
+Dale&#39;s Pale Ale
 starting
+Sierra Nevada Pale Ale
 starting
+Michelob Ultra
 starting
+Natural Light
 starting
+Bud Light
 starting
+Fat Tire Amber Ale
 starting
+Coors Light
 starting
+Blue Moon Belgian White
 starting
+60 Minute IPA
 starting
+Guinness Draught
 starting
+Old Rasputin Russian Imperial Stout
 starting
+90 Minute IPA
 starting
+Sierra Nevada Celebration Ale
 starting
+Two Hearted Ale
 starting
+Arrogant Bastard Ale
 starting
+Pliny The Elder
 starting
+Sierra Nevada Bigfoot Barleywine Style Ale
 starting
+La Fin Du Monde
 starting
+Trappistes Rochefort 10
 starting
+Ayinger Celebrator Doppelbock
 starting
+St. Bernardus Abt 12
 starting
+Imperial Stout
 starting
+Samuel Adams Boston Lager
 starting
+Duvel
 starting
+Dead Guy Ale
 starting
+Orval Trappist Ale
 starting
+Weihenstephaner Hefeweissbier
 starting
+Budweiser
 starting
+Samuel Smith&#39;s Oatmeal Stout
 starting
+Samuel Adams Octoberfest
 </pre>
 </div>
 </div>
@@ -12452,8 +13543,7 @@ starting
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12463,7 +13553,7 @@ starting
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[98]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;beer1&quot;</span><span class="p">,</span> <span class="s2">&quot;beer2&quot;</span><span class="p">,</span> <span class="s2">&quot;overall_dist&quot;</span><span class="p">,</span> <span class="s2">&quot;aroma_dist&quot;</span><span class="p">,</span> <span class="s2">&quot;palate_dist&quot;</span><span class="p">,</span> <span class="s2">&quot;taste_dist&quot;</span><span class="p">]</span>
@@ -12479,10 +13569,27 @@ starting
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[28]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[98]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -12642,8 +13749,7 @@ starting
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12653,7 +13759,7 @@ starting
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[99]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calc_distance</span><span class="p">(</span><span class="n">dists</span><span class="p">,</span> <span class="n">beer1</span><span class="p">,</span> <span class="n">beer2</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
@@ -12664,30 +13770,49 @@ starting
     <span class="k">return</span> <span class="n">dist</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="c1">#print(calc_distance(simple_distances), &quot;Fat Tire Amber Ale&quot;, &quot;Dale&#39;s Pale Ale&quot;, weights)</span>
-<span class="c1">#print(calc_distance(simple_distances), &quot;Fat Tire Amber Ale&quot;, &quot;Michelob Ultra&quot;, weights)</span>
+<span class="c1">#fixed from PY 2.7</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calc_distance</span><span class="p">(</span><span class="n">simple_distances</span><span class="p">,</span> <span class="s1">&#39;Fat Tire Amber Ale&#39;</span><span class="p">,</span> <span class="s2">&quot;Dale&#39;s Pale Ale&quot;</span><span class="p">,</span> <span class="n">weights</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calc_distance</span><span class="p">(</span><span class="n">simple_distances</span><span class="p">,</span> <span class="s2">&quot;Fat Tire Amber Ale&quot;</span><span class="p">,</span> <span class="s2">&quot;Michelob Ultra&quot;</span><span class="p">,</span> <span class="n">weights</span><span class="p">))</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>102.95349368782318
+182.5057726767514
+</pre>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Find-Similar-Beers-for-Sierra-Light">Find Similar Beers for Sierra Light<a class="anchor-link" href="#Find-Similar-Beers-for-Sierra-Light">&#182;</a></h2>
+<h2 id="Find-Similar-Beers">Find Similar Beers<a class="anchor-link" href="#Find-Similar-Beers">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[100]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_beer</span> <span class="o">=</span> <span class="s2">&quot;Fat Tire Amber Ale&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_beer</span> <span class="o">=</span> <span class="s2">&quot;Samuel Smith&#39;s Oatmeal Stout&quot;</span>
 <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">beers</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">my_beer</span><span class="o">!=</span><span class="n">b</span><span class="p">:</span>
@@ -12703,14 +13828,20 @@ starting
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[35]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[100]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[(&#39;Fat Tire Amber Ale&#39;, &#34;Dale&#39;s Pale Ale&#34;, 102.95349368782318),
- (&#39;Fat Tire Amber Ale&#39;, &#39;Samuel Adams Octoberfest&#39;, 107.18448392896286),
- (&#39;Fat Tire Amber Ale&#39;, &#39;Blue Moon Belgian White&#39;, 114.05312148118385),
- (&#39;Fat Tire Amber Ale&#39;, &#39;Dead Guy Ale&#39;, 120.92643689403538)]</pre>
+<pre>[(&#34;Samuel Smith&#39;s Oatmeal Stout&#34;, &#34;Dale&#39;s Pale Ale&#34;, 100.03287900519081),
+ (&#34;Samuel Smith&#39;s Oatmeal Stout&#34;, &#39;Pliny The Elder&#39;, 110.85382231220953),
+ (&#34;Samuel Smith&#39;s Oatmeal Stout&#34;,
+  &#39;Weihenstephaner Hefeweissbier&#39;,
+  116.48301840501134),
+ (&#34;Samuel Smith&#39;s Oatmeal Stout&#34;, &#39;Two Hearted Ale&#39;, 120.7930670918206)]</pre>
 </div>
 
 </div>
@@ -12719,20 +13850,37 @@ starting
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="See-in-Production">See in Production<a class="anchor-link" href="#See-in-Production">&#182;</a></h1><p><a href="http://beers.yhathq.com/">http://beers.yhathq.com/</a></p>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Similar-program-in-R">Similar program in R<a class="anchor-link" href="#Similar-program-in-R">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="http://blog.yhat.com/posts/recommender-system-in-r.html">http://blog.yhat.com/posts/recommender-system-in-r.html</a></p>
 
+</div>
+</div>
 </div>
     </div>
   </div>
 </body>
+
+ 
+
+
 </html>
