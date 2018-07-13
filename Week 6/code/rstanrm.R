@@ -56,7 +56,7 @@ bayesplot_grid(
 #plot the histograms for each parameter (pooled across chains) and the empirical density of each parameter, respectively.
 bayesplot_grid(
   plot(womensrole_bglm_1, plotfun = "hist") + ggtitle("Marginal Posterior Parameter Distributions"),
-  plot(womensrole_bglm_1, plotfun = "dens_overlay",stat_bin(bins = 20)) + ggtitle("Marginal Posterior Parameter Distributions"), 
+  plot(womensrole_bglm_1, plotfun = "dens_overlay",stat_bin(bins = 30)) + ggtitle("Marginal Posterior Parameter Distributions"), 
   grid_args = list(nrow = 2)
 )
 
